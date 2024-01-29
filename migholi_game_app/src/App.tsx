@@ -9,7 +9,10 @@ function App() {
     border_page:
     {
       backgroundColor : "#181818",
-      minHeight: '100vh',
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: '100vh',
     }
   };
 

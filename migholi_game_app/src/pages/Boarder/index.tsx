@@ -1,7 +1,13 @@
 import "./index.css"
-import React from 'react';
+import React, { useState } from 'react';
 function BorderGame(){
-
+    const [toggle,setToggle] = useState("");
+    const flipCard = () => {
+        setToggle(toggle === 'flip' ? '' : 'flip');
+      };
+    const cards = document.querySelectorAll('.each-card');
+    // function flipCard (this:any) {this.classList.toggle('flip'); console.log("hi")};
+    cards.forEach(card => card.addEventListener('click' , flipCard));
     return (
     <section className="boarder-place">
 

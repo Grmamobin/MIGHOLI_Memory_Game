@@ -3,29 +3,32 @@
 @import 'tailwindcss/utilities';
 
 .boarder-place {
-    /* background-color: "#282c34"; */
+    background-color: #282c34;
     width: 500px;
     height: 380px;
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid red;
+    border: 2px solid #282c34;
 }
 .each-card{
-    border: 2px solid blue;
+    border: 2px solid #282c34;
     height: 120px;
     width: 120px;
     position: relative;
-
+    transform: scale(1);
 }
-/* .front , .back {
-    border: 2px solid green;
-    position: absolute;
-} */
+.each-card.flip{
+    transform: rotateY(180deg);
+}
+.each-card:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
 
 .each-card img{
     width: 120px;
     height: 120px;
-    border: 2px solid green;
+    border: 2px solid #282c34;
     position: absolute;
     /* padding: 8px; */
     object-fit: cover;
