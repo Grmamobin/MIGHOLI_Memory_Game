@@ -1,26 +1,42 @@
+import BorderGame from "./pages/Boarder"
+// import { Route, Routes } from "react-router-dom";
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const page_style = {
+    border_page:
+    {
+      backgroundColor : "#181818",
+      minHeight: '100vh',
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <div className="App">
+    //   <header className="App-header">
+    //     <p>
+    //       Edit <code>src/App.tsx</code> and save to reload.
+    //     </p>
+    //     <a
+    //       className="App-link"
+    //       href="https://reactjs.org"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Learn React
+    //     </a>
+    //   </header>
+    // </div>
+
+    // <Routes>
+    //   <Route path="./border_game" element={<BorderGame />} />
+    // </Routes>
+    <div style={page_style.border_page}>
+    <BorderGame />
     </div>
+   
   );
 }
-
 export default App;
