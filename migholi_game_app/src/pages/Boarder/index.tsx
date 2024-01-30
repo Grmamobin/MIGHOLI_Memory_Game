@@ -3,12 +3,12 @@ import React, { useEffect ,useRef} from 'react';
 function BorderGame(){
 
     let isFlipped = useRef(false);
-
     let card1 = useRef<HTMLElement | null>(null);
     let card2 = useRef<HTMLElement | null>(null);
   
     useEffect(() => {
       const flipCard = function (this: HTMLElement) {
+        if(this === card1.current) return;
         this.classList.add('flip');
   
         if (isFlipped.current) {
@@ -36,11 +36,17 @@ function BorderGame(){
             }
             card1.current = null;
             card2.current = null;
-
         }
     }, 500);
       };
-  
+      function randomCard(): void {
+        const cards: NodeListOf<HTMLElement> = document.querySelectorAll<HTMLElement>('.each-card');
+        cards.forEach((card: HTMLElement) => {
+          let rand: number = Math.floor(Math.random() * 25);
+          card.style.order = rand.toString();
+        });
+      }
+      randomCard()
       const cards = document.querySelectorAll('.each-card');
       cards.forEach(card => card.addEventListener('click', flipCard));
   
@@ -48,11 +54,10 @@ function BorderGame(){
         cards.forEach(card => card.removeEventListener('click', flipCard));
       };
     }, []);
+
   
-        
-
-
     return (
+
     <section className="boarder-place">
         {/* add data- to name every image's name to call in function */}
         <div className="each-card" data-name="migholi1">
@@ -90,7 +95,6 @@ function BorderGame(){
             <img  className="back" src="./images/migholi_otherWay1.jpg" alt='migholi_back'/>
         </div>
 
-
         <div className="each-card" data-name="migholi5">
             <img  className="front" src="./images/migholi5.jpg" alt='migholi5'/>
             <img  className="back" src="./images/migholi_otherWay1.jpg" alt='migholi_back'/>
@@ -100,7 +104,6 @@ function BorderGame(){
             <img  className="front" src="./images/migholi3.jpg" alt='migholi3'/>
             <img  className="back" src="./images/migholi_otherWay1.jpg" alt='migholi_back'/>
         </div>
-
 
         <div className="each-card" data-name="migholi4">
             <img  className="front" src="./images/migholi4.jpg" alt='migholi4'/>
