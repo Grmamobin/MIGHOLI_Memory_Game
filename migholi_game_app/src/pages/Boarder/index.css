@@ -3,15 +3,15 @@
 @import 'tailwindcss/utilities';
 
 .boarder-place {
-    background-color: #282c34;
-    width: 500px;
+    /* background-color: #282c34; */
+    width: 600px;
     height: 380px;
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid #282c34;
+    /* border: 2px solid #282c34; */
 }
 .each-card{
-    border: 2px solid #282c34;
+    border: 4px solid #282c34;
     height: 120px;
     width: 120px;
     position: relative;
@@ -28,7 +28,7 @@
 .each-card img{
     width: 120px;
     height: 120px;
-    border: 2px solid #282c34;
+    /* border: 2px solid #282c34; */
     position: absolute;
     /* padding: 8px; */
     object-fit: cover;

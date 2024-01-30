@@ -1,13 +1,23 @@
 import "./index.css"
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+
 function BorderGame(){
-    const [toggle,setToggle] = useState("");
-    const flipCard = () => {
-        setToggle(toggle === 'flip' ? '' : 'flip');
-      };
-    const cards = document.querySelectorAll('.each-card');
-    // function flipCard (this:any) {this.classList.toggle('flip'); console.log("hi")};
-    cards.forEach(card => card.addEventListener('click' , flipCard));
+    // by using useEffect it's prevent double clicking 
+    useEffect(() => { 
+        const flipCard = function (this: HTMLElement) {
+          this.classList.toggle('flip');
+        };
+        const cards = document.querySelectorAll('.each-card');
+        cards.forEach(card => card.addEventListener('click', flipCard));
+        return () => {
+            cards.forEach(card => card.removeEventListener('click', flipCard));
+          };
+        }, []);    
+
+    // const cards = document.querySelectorAll('.each-card');
+    // function flipCard (this:HTMLElement) {console.log("hi"); this.classList.toggle('flip');};
+    // cards.forEach(card => card.addEventListener('click' , flipCard));
+
     return (
     <section className="boarder-place">
 
