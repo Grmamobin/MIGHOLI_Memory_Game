@@ -8,7 +8,7 @@ function App() {
   const page_style = {
     border_page:
     {
-      backgroundColor : "#181818",
+      backgroundColor : "#0b1215",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",

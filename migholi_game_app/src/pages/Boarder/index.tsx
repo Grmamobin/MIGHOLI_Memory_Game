@@ -32,6 +32,8 @@ function BorderGame(){
                     console.log(card2.current, "card2");  
                     card1.current.classList.remove('flip');
                     card2.current.classList.remove('flip');
+                    // const audio = new Audio('./sounds/wrong-buzzer-6268.mp3');
+                    // audio.play();
                 
             }
             card1.current = null;
@@ -59,7 +61,7 @@ function BorderGame(){
     return (
 
     <section className="boarder-place">
-        {/* add data- to name every image's name to call in function */}
+        {/* add data- to name every image's to call in function */}
         <div className="each-card" data-name="migholi1">
             <img className="front" src="./images/migholi1.jpg" alt='migholi1'/>
             <img  className="back" src="./images/migholi_otherWay1.jpg" alt='migholi_back'/>
