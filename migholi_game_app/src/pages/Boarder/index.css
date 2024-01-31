@@ -5,10 +5,10 @@
 .boarder-place {
     /* background-color: #282c34; */
     width: 600px;
-    height: 380px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
-    perspective: 1000px;
+    padding-bottom: 90px;
     /* border: 2px solid #282c34; */
 }
 .each-card{

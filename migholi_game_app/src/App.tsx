@@ -12,30 +12,11 @@ function App() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      height: '100vh',
+      height: "100vh",
     }
   };
 
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-
-    // <Routes>
-    //   <Route path="./border_game" element={<BorderGame />} />
-    // </Routes>
     <div style={page_style.border_page}>
     <BorderGame />
     </div>
