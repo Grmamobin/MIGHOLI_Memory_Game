@@ -1,6 +1,7 @@
 import "./index.css"
-import React, { useEffect ,useRef} from 'react';
+import React, { useEffect ,useRef , useState} from 'react';
 import Confetti from "react-confetti";
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 function BorderGame(){
 
@@ -9,14 +10,15 @@ function BorderGame(){
     let card1 = useRef<HTMLElement | null>(null);
     let card2 = useRef<HTMLElement | null>(null);
 
+    let [confetti , setConfetti] = useState(false);
+
     const soundRef = useRef<HTMLAudioElement | null>(null);
     // const videoRef = useRef<HTMLAudioElement | null>(null);
-
+    // const videoFun = "videos/funWin.mp4"
     const audioWrong = "sounds/no.mp3"
     const audioCorrect = "sounds/mixkit-bonus-earned-in-video-game-2058.wav"
     const audioWin = "sounds/wee.mp3"
-    // const videoFun = "videos/funWin.mp4"
-  
+
     useEffect(() => {
       const flipCard = function (this: HTMLElement) {
         if(this === card1.current) return;
@@ -50,13 +52,18 @@ function BorderGame(){
             card2.current = null;
         }
     }, 500);
+
     const each_card_flipped: NodeListOf<HTMLElement> = document.querySelectorAll<HTMLElement>('.each-card.flip');
+
     if (each_card_flipped.length === 16){
+        setConfetti(true);
         soundRef.current = new Audio(audioWin);
         soundRef.current?.play();
+        setTimeout(() =>{ setConfetti(false);},5000)
     }
+   
 
-      };
+    };
 
       function randomCard(): void {
         const cards: NodeListOf<HTMLElement> = document.querySelectorAll<HTMLElement>('.each-card');
@@ -78,6 +85,10 @@ function BorderGame(){
       };
     }, []);
 
+    const addConfetti = () => {
+        return <Confetti style={{width:"100vw", height:"100vh"}} recycle={false}/>;
+      };
+
     // const videoFunPlay = () => {
         
     //       videoRef.current?.play();
@@ -89,7 +100,7 @@ function BorderGame(){
         <source src= {videoFun} />
     </video> */}
     <section className="boarder-place">
-        
+    {confetti && addConfetti()}
         {/* add data- to name every image's name to call in function */}
         <div className="each-card" data-name="migholi1">
             <img className="front" src="./images/migholi1.jpg" alt='migholi1'/>
