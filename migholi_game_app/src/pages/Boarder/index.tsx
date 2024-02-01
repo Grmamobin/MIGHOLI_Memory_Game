@@ -1,5 +1,6 @@
 import "./index.css"
 import React, { useEffect ,useRef} from 'react';
+import Confetti from "react-confetti";
 
 function BorderGame(){
 
@@ -9,9 +10,12 @@ function BorderGame(){
     let card2 = useRef<HTMLElement | null>(null);
 
     const soundRef = useRef<HTMLAudioElement | null>(null);
-    const audioWrong = "sounds/wrong-buzzer-6268.mp3"
+    // const videoRef = useRef<HTMLAudioElement | null>(null);
+
+    const audioWrong = "sounds/no.mp3"
     const audioCorrect = "sounds/mixkit-bonus-earned-in-video-game-2058.wav"
-    const audioWin = "sounds/mixkit-completion-of-a-level-2063.wav"
+    const audioWin = "sounds/wee.mp3"
+    // const videoFun = "videos/funWin.mp4"
   
     useEffect(() => {
       const flipCard = function (this: HTMLElement) {
@@ -32,6 +36,7 @@ function BorderGame(){
             if(card1.current.dataset.name === card2.current.dataset.name){
                     soundRef.current = new Audio(audioCorrect);
                     soundRef.current?.play();
+                    // videoFunPlay();
                     card1.current.removeEventListener('click', flipCard);
                     card2.current.removeEventListener('click', flipCard);
             } else {  
@@ -45,6 +50,12 @@ function BorderGame(){
             card2.current = null;
         }
     }, 500);
+    const each_card_flipped: NodeListOf<HTMLElement> = document.querySelectorAll<HTMLElement>('.each-card.flip');
+    if (each_card_flipped.length === 16){
+        soundRef.current = new Audio(audioWin);
+        soundRef.current?.play();
+    }
+
       };
 
       function randomCard(): void {
@@ -67,8 +78,18 @@ function BorderGame(){
       };
     }, []);
 
+    // const videoFunPlay = () => {
+        
+    //       videoRef.current?.play();
+    // }
+
     return (
+        <>
+    {/* <video className="edit-video" controls>
+        <source src= {videoFun} />
+    </video> */}
     <section className="boarder-place">
+        
         {/* add data- to name every image's name to call in function */}
         <div className="each-card" data-name="migholi1">
             <img className="front" src="./images/migholi1.jpg" alt='migholi1'/>
@@ -151,6 +172,7 @@ function BorderGame(){
         </div>
         
     </section>
+    </>
     );
 }
 
