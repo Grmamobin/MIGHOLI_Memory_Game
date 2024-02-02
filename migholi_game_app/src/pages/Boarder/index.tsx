@@ -18,6 +18,7 @@ function BorderGame(){
     const audioWrong = "sounds/no.mp3"
     const audioCorrect = "sounds/mixkit-bonus-earned-in-video-game-2058.wav"
     const audioWin = "sounds/wee.mp3"
+    const audioFail = "sounds/fail-jingle-stereo-mix-88784.mp3"
 
     useEffect(() => {
       const flipCard = function (this: HTMLElement) {
@@ -59,9 +60,8 @@ function BorderGame(){
         setConfetti(true);
         soundRef.current = new Audio(audioWin);
         soundRef.current?.play();
-        setTimeout(() =>{ setConfetti(false);},5000)
+        setTimeout(() =>{ setConfetti(false);},50000)
     }
-   
 
     };
 
@@ -84,21 +84,53 @@ function BorderGame(){
         cards.forEach(card => card.removeEventListener('click', flipCard));
       };
     }, []);
-
+    
+    // FUNCTIONS:: INIT
     const addConfetti = () => {
         return <Confetti style={{width:"100vw", height:"100vh"}} recycle={false}/>;
       };
 
-    // const videoFunPlay = () => {
-        
-    //       videoRef.current?.play();
-    // }
+    const playMusic = () => {
+       
+        soundRef.current= new Audio(audioFail);
+        soundRef.current.muted = false;
+        soundRef.current?.play();
+    }
+
+    const renderTime = ({ remainingTime }: { remainingTime: number }) => {
+
+        if (remainingTime === 0) {
+            return (<div className="timer">Time is Up !</div>);
+        }
+
+        return (
+            <div className="timer">
+            <div>Time Remaining</div>
+            <div>{remainingTime + ` S`}</div>
+            </div>
+        );
+    };
+
+    const counter_timer = () => {
+    return (
+        <div className="countdown-timer">
+        <CountdownCircleTimer
+            isPlaying
+            duration={10}
+            colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+            colorsTime={[60, 30, 10, 0]}
+            size={150}
+            onComplete={() => playMusic()}
+        >
+            {renderTime}
+        </CountdownCircleTimer>
+        </div>
+    )};
+
 
     return (
         <>
-    {/* <video className="edit-video" controls>
-        <source src= {videoFun} />
-    </video> */}
+    {counter_timer()}
     <section className="boarder-place">
     {confetti && addConfetti()}
         {/* add data- to name every image's name to call in function */}
