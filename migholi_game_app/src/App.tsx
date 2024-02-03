@@ -1,13 +1,19 @@
-import BorderGame from "./pages/Boarder"
-// import { Route, Routes } from "react-router-dom";
 import React from 'react';
 import './App.css';
+import { Route, Routes , BrowserRouter } from "react-router-dom";
+import BorderGame from "./pages/Boarder"
+import MenuPage from './pages/menu';
 
 function App() {
 
   const page_style = {
-    border_page:
-    {
+    menu_page:{
+      backgroundColor: "#0b1215",
+      display: "flex",
+      justifyContent: "center",
+      height: "100vh",
+    },
+    border_page:{
       backgroundColor : "#0b1215",
       display: "flex",
       justifyContent: "center",
@@ -17,9 +23,13 @@ function App() {
   };
 
   return (
-    <div style={page_style.border_page}>
-    <BorderGame />
-    </div>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div style={page_style.menu_page}><MenuPage /></div>} />
+        <Route path="/" element={<div style={page_style.border_page}><BorderGame /></div>} />
+      </Routes>
+    </BrowserRouter>
    
   );
 }

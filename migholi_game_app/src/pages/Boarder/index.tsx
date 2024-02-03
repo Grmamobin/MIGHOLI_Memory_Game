@@ -90,13 +90,16 @@ function BorderGame(){
         return <Confetti style={{width:"100vw", height:"100vh"}} recycle={false}/>;
       };
 
+    const playMusic = () => {
+       
+        soundRef.current= new Audio(audioFail);
+        soundRef.current.muted = false;
+        soundRef.current?.play();
+    }
+    
     const renderTime = ({ remainingTime }: { remainingTime: number }) => {
 
         if (remainingTime === 0) {
-            soundRef.current= new Audio(audioFail);
-            soundRef.current.muted = false;
-            soundRef.current?.play();
-            
             return (<div className="timer">Time is Up !</div>);
         }
 
@@ -113,10 +116,11 @@ function BorderGame(){
         <div className="countdown-timer">
         <CountdownCircleTimer
             isPlaying
-            duration={10}
+            duration={60}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[60, 30, 10, 0]}
             size={150}
+            onComplete={() => playMusic()}
         >
             {renderTime}
         </CountdownCircleTimer>
