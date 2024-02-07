@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 import { Route, Routes , BrowserRouter } from "react-router-dom";
 import BorderGame from "./pages/Boarder"
-import MenuPage from './pages/menu';
+import MainPage from './pages/menu';
+
 
 function App() {
 
   const page_style = {
     menu_page:{
-      backgroundColor: "#0b1215",
+      background: "linear-gradient(rgb(183, 237, 240),#dfad6a)",
       display: "flex",
       justifyContent: "center",
       height: "100vh",
@@ -26,8 +27,8 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<div style={page_style.menu_page}><MenuPage /></div>} />
-        <Route path="/" element={<div style={page_style.border_page}><BorderGame /></div>} />
+        <Route path="/" element={<div style={page_style.menu_page} ><MainPage /></div>} />
+        {/* <Route path="/" element={<div style={page_style.border_page}><BorderGame /></div>} /> */}
       </Routes>
     </BrowserRouter>
    

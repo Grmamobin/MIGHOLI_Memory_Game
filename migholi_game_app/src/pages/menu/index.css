@@ -1,0 +1,57 @@
+.all-things{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background:linear-gradient(rgb(183, 237, 240),#dfad6a);
+}
+.stylish{
+  width: 600px;
+  position: absolute;
+  margin-top: 163px;
+  margin-left: 700px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.sun { 
+  margin-left: 100px;
+  margin-bottom: 450px;
+  border-radius:50%;
+  position:absolute;
+  width: 300px;
+  height: 300px;
+  background-color: orange;
+  box-shadow: 0 0 35px 5px yellow,0 0 25px 10px yellow inset
+}
+.chair{
+  width: 600px;
+  padding-top: 28px;
+  padding-right: 700px;
+  position: absolute;
+  margin-top: 163px;
+}
+/* .beach {
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(rgb(183, 237, 240),#dfad6a);
+} */
+.date_palm{
+  width: 500px;
+  padding-top: 110px;
+  padding-left: 900px;
+  position: absolute;
+  margin-top: 163px;
+}
+/* .sand-dots .dot {
+  background:rgba(0,0,0,0.1);
+  height:3px;
+  width:3px;
+  border-radius:10px;
+  display:inline-block;
+  margin:9px 5px 8px 10px;
+  float:left;
+}
+.dot:nth-child(1) { margin-top:620px; }
+.dot:nth-child(2) { margin-top:650px; }
+.dot:nth-child(3) { margin-top:30px; }
+.dot:nth-child(4) { margin-top:30px; } */
