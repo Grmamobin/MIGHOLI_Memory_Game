@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Routes , BrowserRouter } from "react-router-dom";
+import { Route, Routes , BrowserRouter  } from "react-router-dom";
 import BorderGame from "./pages/Boarder"
 import MainPage from './pages/menu';
 
@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<div style={page_style.menu_page} ><MainPage /></div>} />
-        {/* <Route path="/" element={<div style={page_style.border_page}><BorderGame /></div>} /> */}
+        <Route path="/border" element={<div style={page_style.border_page}><BorderGame /></div>} />
       </Routes>
     </BrowserRouter>
    

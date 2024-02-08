@@ -6,15 +6,14 @@
   background:linear-gradient(rgb(183, 237, 240),#dfad6a);
 }
 .stylish{
-  width: 600px;
+  width: 500px;
   position: absolute;
   margin-top: 163px;
-  margin-left: 700px;
+  margin-left: 400px;
   display: flex;
   flex-wrap: wrap;
 }
 .sun { 
-  margin-left: 100px;
   margin-bottom: 450px;
   border-radius:50%;
   position:absolute;
@@ -24,9 +23,9 @@
   box-shadow: 0 0 35px 5px yellow,0 0 25px 10px yellow inset
 }
 .chair{
-  width: 600px;
+  width: 500px;
   padding-top: 28px;
-  padding-right: 700px;
+  padding-right: 800px;
   position: absolute;
   margin-top: 163px;
 }
@@ -41,6 +40,9 @@
   padding-left: 900px;
   position: absolute;
   margin-top: 163px;
+}
+.btn{
+  position: absolute;
 }
 /* .sand-dots .dot {
   background:rgba(0,0,0,0.1);
