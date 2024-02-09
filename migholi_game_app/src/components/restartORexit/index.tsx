@@ -1,6 +1,7 @@
 import Button from "../Button";
 import "./index.css"
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 interface Modal{
     statues: string;
@@ -10,9 +11,13 @@ interface Modal{
 
 function RestartOrNot(props: Modal)  {
     const {statues,images,alt_image} = props;
-    function start_game (){
-
-    }
+    const navigate = useNavigate();
+    const start_game = () => {
+        window.location.reload();
+    };
+    const exit_game = () => {
+        navigate('/');
+    };
     
     return(
         <>
@@ -27,7 +32,7 @@ function RestartOrNot(props: Modal)  {
                 </div>
                 <div className="btn">
                     <Button  BtnValue="RESTART" onClick={start_game}/>
-                    <Button  BtnValue="EXIT" onClick={start_game}/>
+                    <Button  BtnValue="EXIT" onClick={exit_game}/>
                 </div>
             </div>
         </section>
