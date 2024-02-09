@@ -43,6 +43,8 @@
 }
 .btn{
   position: absolute;
+  margin-left: 1000px;
+  margin-bottom: 300px;
 }
 /* .sand-dots .dot {
   background:rgba(0,0,0,0.1);

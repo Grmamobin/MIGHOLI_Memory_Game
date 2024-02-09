@@ -1,26 +1,34 @@
-// import "./index.css"
-// import React from 'react';
-// import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import Button from "../Button";
+import "./index.css"
+import React from 'react';
 
-// function countdownTimer() {
+interface Modal{
+    statues: string;
+    images : string;
+    alt_image : string;
+}
 
-//     const UrgeWithPleasureComponent = () => {
-//         return <CountdownCircleTimer
-//         isPlaying
-//         duration={60}
-//         colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-//         colorsTime={[60, 30, 10, 0]}
-//         className="countdown-timer"
-//     >
-//         {({ remainingTime }) => remainingTime}
-//     </CountdownCircleTimer>
-//     };
+function RestartOrNot(props: Modal)  {
+    const {statues,images,alt_image} = props;
+    function start_game (){
+
+    }
     
-//     return(
-//         <>
-//             {UrgeWithPleasureComponent()}
-//         </>
-//     );
-// }
-// export default countdownTimer;
-export {}
+    return(
+        <>
+        <section className="rectangle">
+            <div className="container">
+                <div className="title">
+                    <h1>{statues}</h1>
+                    <img src={images} alt={alt_image}/>
+                </div>
+                <div className="btn">
+                    <Button  BtnValue="RESTART" onClick={start_game}/>
+                    <Button  BtnValue="EXIT" onClick={start_game}/>
+                </div>
+            </div>
+        </section>
+        </>
+    );
+}
+export default RestartOrNot;

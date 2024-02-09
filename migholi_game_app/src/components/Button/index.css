@@ -1,17 +1,3 @@
-/* .all-button{
-    background-color: aqua;
-    border: none;
-    margin-left: 1000px;
-    border-radius: 100px;
-    margin-bottom: 300px;
-    padding-left: 100px;
-    padding-top: 100px;
-    cursor: pointer;
-} */
-    /* <!-- HTML !-->
-<button class="button-53" role="button">Button 53</button> */
-
-/* CSS */
 .button {
   background-color: #e7bf3d;
   border: 0 solid #E5E7EB;
@@ -37,8 +23,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-left: 1000px;
-  margin-bottom: 300px;
 }
 
 .button:focus {
