@@ -1,6 +1,7 @@
 import "./index.css"
-import React, { useEffect ,useRef , useState} from 'react';
+import React, { useEffect ,useRef , useState } from 'react';
 import Confetti from "react-confetti";
+import RestartOrNot from "../../components/restartORexit";
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 function BorderGame(){
@@ -11,6 +12,8 @@ function BorderGame(){
     let card2 = useRef<HTMLElement | null>(null);
 
     let [confetti , setConfetti] = useState(false);
+    let [gameover , setGameover] = useState(false);
+    let [win , setWin] = useState(false);
 
     const soundRef = useRef<HTMLAudioElement | null>(null);
     // const videoRef = useRef<HTMLAudioElement | null>(null);
@@ -61,6 +64,7 @@ function BorderGame(){
         soundRef.current = new Audio(audioWin);
         soundRef.current?.play();
         setTimeout(() =>{ setConfetti(false);},50000)
+        setWin(true);
     }
 
     };
@@ -95,6 +99,7 @@ function BorderGame(){
         soundRef.current= new Audio(audioFail);
         soundRef.current.muted = false;
         soundRef.current?.play();
+        setGameover(true);
     }
     
     const renderTime = ({ remainingTime }: { remainingTime: number }) => {
@@ -115,7 +120,7 @@ function BorderGame(){
     return (
         <div className="countdown-timer">
         <CountdownCircleTimer
-            isPlaying
+            isPlaying ={!win}
             duration={60}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[60, 30, 10, 0]}
@@ -126,6 +131,8 @@ function BorderGame(){
         </CountdownCircleTimer>
         </div>
     )};
+
+
 
 
     return (
@@ -216,6 +223,8 @@ function BorderGame(){
         </div>
         
     </section>
+    {gameover && <RestartOrNot statues={'GAME OVER'} images={'/images/migholi_background2.svg'} alt_image={'gameover-img'}/> }
+    {win && <RestartOrNot statues={'CONGRATS YOU WIN'} images={'/images/migholi_background.svg'} alt_image={'winning-img'}/> }
     </div>
     </>
     );

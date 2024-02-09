@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<div style={page_style.menu_page} ><MainPage /></div>} />
         <Route path="/border" element={<BorderGame />} />
-        <Route path="/restart" element={<RestartOrNot statues={'help'} images={''} alt_image={''}/>} /> 
+        <Route path="/restart" element={<RestartOrNot statues={'GAME OVER'} images={'/images/migholi_background2.svg'} alt_image={'um'}/>} /> 
       </Routes>
     </BrowserRouter>
    

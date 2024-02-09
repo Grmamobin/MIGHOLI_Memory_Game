@@ -20,7 +20,10 @@ function RestartOrNot(props: Modal)  {
             <div className="container">
                 <div className="title">
                     <h1>{statues}</h1>
-                    <img src={images} alt={alt_image}/>
+                    <img style={{height:"200px"}} src={images} alt={alt_image}/>
+                </div>
+                <div className="title">
+                     <p>Do you wanna play again?</p>
                 </div>
                 <div className="btn">
                     <Button  BtnValue="RESTART" onClick={start_game}/>
