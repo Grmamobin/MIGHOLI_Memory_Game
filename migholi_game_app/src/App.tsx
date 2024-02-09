@@ -1,15 +1,16 @@
 import React from 'react';
-import './App.css';
 import { Route, Routes , BrowserRouter  } from "react-router-dom";
-import BorderGame from "./pages/Boarder"
-import MainPage from './pages/menu';
+import './App.css';
 import RestartOrNot from './components/restartORexit';
+import BoardGame from "./pages/Board"
+import MainPage from './pages/mainPage';
 
 
 function App() {
 
   const page_style = {
-    menu_page:{
+
+    main_page:{
       backgroundImage: 'url("/images/BEACH.png")',
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -24,12 +25,12 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<div style={page_style.menu_page} ><MainPage /></div>} />
-        <Route path="/border" element={<BorderGame />} />
-        <Route path="/restart" element={<RestartOrNot statues={'GAME OVER'} images={'/images/migholi_background2.svg'} alt_image={'um'}/>} /> 
+          <Route path="/" element={<div style={page_style.main_page} ><MainPage /></div>} />
+          <Route path="/border" element={<BoardGame />} />
+          <Route path="/restart" element={<RestartOrNot statues={''} images={''} alt_image={''}/>} /> 
       </Routes>
     </BrowserRouter>
    
   );
-      }
+}
 export default App;

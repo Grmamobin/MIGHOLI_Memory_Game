@@ -1,7 +1,7 @@
-import Button from "../Button";
-import "./index.css"
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
+import "./index.css"
+import Button from "../Button";
 
 interface Modal{
     statues: string;
@@ -21,7 +21,7 @@ function RestartOrNot(props: Modal)  {
     
     return(
         <>
-        <section className="rectangle">
+        <section className="surrounded">
             <div className="container">
                 <div className="title">
                     <h1>{statues}</h1>

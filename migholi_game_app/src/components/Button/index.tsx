@@ -7,13 +7,13 @@ interface ButtonWorth{
 }
 
 function Button(props:ButtonWorth) {
-    const {BtnValue,onClick } = props;
+    const {BtnValue,onClick} = props;
     return(
         <button
-        type="button"
-        value={BtnValue}
-        onClick={onClick}
-        className={`button`}
+            type="button"
+            value={BtnValue}
+            onClick={onClick}
+            className={`button`}
         >
         {BtnValue}
         </button>
