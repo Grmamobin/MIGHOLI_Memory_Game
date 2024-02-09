@@ -2,6 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+.background{
+    background-image: url("/public/images/BEACH.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 .boarder-place {
     /* background-color: #282c34; */
     width: 600px;
@@ -12,7 +21,8 @@
     /* border: 2px solid #282c34; */
 }
 .each-card{
-    border: 4px solid #282c34;
+    border: 4px solid;
+    border-image: linear-gradient(rgb(183, 237, 240), #dfad6a) 1;
     height: 120px;
     width: 120px;
     position: relative;
@@ -53,7 +63,7 @@
     padding-right: 100px;
 }
 .timer{
-    color: white;
+    color: #088F8F;
     font-size: 15px;
     font-weight: bold;
     text-align: center;

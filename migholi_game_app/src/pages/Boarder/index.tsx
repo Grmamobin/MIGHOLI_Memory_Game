@@ -130,6 +130,7 @@ function BorderGame(){
 
     return (
         <>
+    <div className="background">
     {counter_timer()}
     <section className="boarder-place">
     {confetti && addConfetti()}
@@ -215,6 +216,7 @@ function BorderGame(){
         </div>
         
     </section>
+    </div>
     </>
     );
 }
