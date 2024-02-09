@@ -1,0 +1,67 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.background{
+    background-image: url("/public/images/BEACH.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.boarder-place {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.each-card{
+    border: 4px solid;
+    border-image: linear-gradient(rgb(183, 237, 240), rgb(211, 233, 234)) 1;
+    height: 120px;
+    width: 120px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.each-card.flip{
+    transform: rotateY(180deg);
+}
+.each-card:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+.back {
+    backface-visibility: hidden;
+}
+.front{
+    transform: rotateY(180deg);
+}
+
+.each-card img{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    object-fit: cover;
+}
+.edit-video{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.countdown-timer{
+    position: absolute;
+    padding-bottom: 580px;
+    padding-right: 100px;
+}
+.timer{
+    color: #088F8F;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: #282c34;
+}
