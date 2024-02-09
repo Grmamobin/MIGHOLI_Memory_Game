@@ -62,9 +62,6 @@ function BoardGame(){
                 setConfetti(true);
                 soundRef.current = new Audio(audioWin);
                 soundRef.current?.play();
-                setTimeout(() => {
-                    setConfetti(false);
-                }, 5000);
                 setWin(true);
             }, 1000);
         }
