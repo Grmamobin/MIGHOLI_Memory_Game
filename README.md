@@ -25,7 +25,7 @@ npm start
 or
 
 ```ts
-yard start
+yarn start
 ```
 
 well ummm I have nothing to offer except these images... Let's have fun by playing this game! 😜
