@@ -13,13 +13,13 @@ If you want to play it:
 Make sure to add "node_modules" ::
 
 ```ts
-run npm install
+npm install
 ```
 
 Then :
 
 ```ts
-run npm start
+npm start
 ```
 
 or
