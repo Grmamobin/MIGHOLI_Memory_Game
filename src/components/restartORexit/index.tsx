@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import "./index.css"
 import Button from "../Button";
 
 interface Modal{
     statues: string;
-    score:string;
+    score:number;
     images : string;
     alt_image : string;
 }
@@ -19,7 +19,14 @@ function RestartOrNot(props: Modal)  {
     const exit_game = () => {
         navigate('/');
     };
-    
+
+    useEffect(() => {
+        const savedData = localStorage.getItem('score');
+        if(savedData!=null || (score>Number(savedData))){
+            localStorage.setItem('score', score.toString());
+        }
+
+    }, []);
     return(
         <>
         <section className="surrounded">

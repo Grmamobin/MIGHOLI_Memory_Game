@@ -27,7 +27,7 @@ function App() {
       <Routes>
           <Route path="/" element={<div style={page_style.main_page} ><MainPage /></div>} />
           <Route path="/border" element={<BoardGame />} />
-          <Route path="/restart" element={<RestartOrNot statues={''} score={''} images={''} alt_image={''}/>} />
+          <Route path="/restart" element={<RestartOrNot statues={''} score={0} images={''} alt_image={''}/>} />
       </Routes>
     </BrowserRouter>
    

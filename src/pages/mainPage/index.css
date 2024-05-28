@@ -34,3 +34,16 @@
   margin-left: 1000px;
   margin-bottom: 300px;
 }
+.alert-text{
+  font-size: xx-small;
+  font-weight: lighter;
+  font-family: Papyrus, sans-serif;
+  position: absolute;
+  margin-right: 1200px;
+  margin-top: 200px;
+}
+.hi-score{
+  position: absolute;
+  margin-left: 1000px;
+  margin-bottom: 100px;
+}
