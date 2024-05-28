@@ -55,8 +55,13 @@
 }
 .countdown-timer{
     position: absolute;
-    padding-bottom: 580px;
-    padding-right: 100px;
+    padding-bottom: 550px;
+    padding-right: 250px;
+}
+.score-label{
+    position: absolute;
+    padding-bottom: 550px;
+    padding-left: 250px;
 }
 .timer{
     color: #088F8F;
