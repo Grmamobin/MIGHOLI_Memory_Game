@@ -3,9 +3,11 @@ import React, { useEffect ,useRef , useState} from 'react';
 import Confetti from "react-confetti";
 import RestartOrNot from "../../components/restartORexit";
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import Button from "../../components/Button";
 
 function BoardGame(){
 
+    const [score, setScore] = useState(0);
     let isFlipped = useRef(false);
 
     let card1 = useRef<HTMLElement | null>(null);
@@ -43,11 +45,13 @@ function BoardGame(){
                    
                     card1.current.removeEventListener('click', flipCard);
                     card2.current.removeEventListener('click', flipCard);
+                    setScore(prevScore => prevScore + 50);
             } else {  
                     soundRef.current = new Audio(audioWrong);
                     soundRef.current?.play();
                     card1.current.classList.remove('flip');
                     card2.current.classList.remove('flip');
+                    setScore(prevScore => prevScore - 10);
                     
             }
             card1.current = null;
@@ -121,7 +125,7 @@ function BoardGame(){
         <CountdownCircleTimer
             isPlaying ={!win}
             duration={60}
-            colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+            colors={['#00D100', '#e1ab0e', '#A30000', '#A30000']}
             colorsTime={[60, 30, 10, 0]}
             size={150}
             onComplete={() => playMusic()}
@@ -134,8 +138,13 @@ function BoardGame(){
     return (
         <>
     <div className="background">
+            {counter_timer()}
+        <div className="score-label">
+            <Button  BtnValue={'Score:' +score.toString()} onClick={()=>{
+                setScore(prevState => prevState-1);
+            }}/>
+        </div>
 
-        {counter_timer()}
 
         <section className="boarder-place">
 
