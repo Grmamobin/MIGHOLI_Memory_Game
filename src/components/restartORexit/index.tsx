@@ -5,12 +5,13 @@ import Button from "../Button";
 
 interface Modal{
     statues: string;
+    score:string;
     images : string;
     alt_image : string;
 }
 
 function RestartOrNot(props: Modal)  {
-    const {statues,images,alt_image} = props;
+    const {statues,images,alt_image,score } = props;
     const navigate = useNavigate();
     const start_game = () => {
         window.location.reload();
@@ -25,10 +26,11 @@ function RestartOrNot(props: Modal)  {
             <div className="container">
                 <div className="title">
                     <h1>{statues}</h1>
-                    <img style={{height:"200px"}} src={images} alt={alt_image}/>
+                    <h3>your score is:{score}</h3>
+                    <img style={{height:"170px"}} src={images} alt={alt_image}/>
                 </div>
                 <div className="title">
-                     <p>Do you wanna play again?</p>
+                    <p>Do you wanna play again?</p>
                 </div>
                 <div className="btn">
                     <Button  BtnValue="RESTART" onClick={start_game}/>

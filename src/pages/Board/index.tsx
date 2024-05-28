@@ -232,9 +232,9 @@ function BoardGame(){
             
         </section>
 
-        {gameover && <RestartOrNot statues={'☠️ Ｇａｍｅ ｏｖｅｒ ☠️'} images={'/images/migholi_background2.svg'} alt_image={'gameover-img'}/> }
+        {gameover && <RestartOrNot statues={'☠️ Ｇａｍｅ ｏｖｅｒ ☠️'} score={score.toString()} images={'/images/migholi_background2.svg'} alt_image={'gameover-img'}/> }
 
-        {win && <RestartOrNot statues={'Congrats🏆 You Win 🎯'} images={'/images/migholi_background.svg'} alt_image={'winning-img'}/> }
+        {win && <RestartOrNot statues={'Congrats🏆 You Win 🎯'} score={score.toString()} images={'/images/migholi_background.svg'} alt_image={'winning-img'}/> }
 
     </div>
         </>
