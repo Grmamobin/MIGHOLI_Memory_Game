@@ -22,7 +22,7 @@ function RestartOrNot(props: Modal)  {
 
     useEffect(() => {
         const savedData = localStorage.getItem('score');
-        if(savedData!=null || (score>Number(savedData))){
+        if(savedData!=null && (score>Number(savedData))){
             localStorage.setItem('score', score.toString());
         }
 
