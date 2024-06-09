@@ -8,6 +8,8 @@ import Button from "../../components/Button";
 function BoardGame(){
 
     const [score, setScore] = useState(0);
+    const [position, setPosition] = useState({ top: '500px', left: '200px' });
+
     let isFlipped = useRef(false);
 
     let card1 = useRef<HTMLElement | null>(null);
@@ -97,6 +99,16 @@ function BoardGame(){
         return <Confetti style={{width:"100vw", height:"100vh"}} recycle={false}/>;
     };
 
+    const changePos = () => {
+        const chance = Math.floor(Math.random()*5)
+        if(chance==1)
+            return;
+        const top:string = Math.floor(Math.random() * (window.innerHeight - 100)) + 'px';
+        const left:string = Math.floor(Math.random() * (window.innerWidth - 100)) + 'px';
+
+        setPosition({ top, left });
+    };
+
     const playMusic = () => {
        
         soundRef.current= new Audio(audioFail);
@@ -144,7 +156,13 @@ function BoardGame(){
                 setScore(prevState => prevState-1);
             }}/>
         </div>
-
+        <button style={{position: 'absolute', top: position.top, left: position.left,}} onMouseEnter={changePos} onClick={()=>{
+                setScore(prevState => prevState+50);
+                changePos();
+            }}
+            className={'button'} >
+            bonus!
+        </button>
 
         <section className="boarder-place">
 
